@@ -7,7 +7,10 @@ console.log(contactsPath);
 
 // TODO: задокументувати кожну функцію
 function listContacts() {
-  // ...твій код
+  fs.readFile(path.join(__dirname, 'db', 'contacts.json'), (error, data) => {
+    if (error) throw error;
+    console.log(JSON.parse(data));
+  });
 }
 
 function getContactById(contactId) {
