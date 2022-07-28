@@ -30,12 +30,12 @@ function removeContact(contactId) {
   fs.readFile(contactsPath, 'utf8', (error, data) => {
     if (error) throw error;
     const contactsArray = (JSON.parse(data));
-    const foundContactIndex = contactsArray.findIndex(contact => parseInt(contact.id) === parseInt(contactId));
+    const foundContactIndex = contactsArray.findIndex(contact => contact.id === contactId);
     if (foundContactIndex === -1) {
       console.log(`Contact with id: ${contactId} not found. Nothing to delete.`);
       return -1;
     }
-    const newContactsArray = contactsArray.filter(contact => parseInt(contact.id) !== parseInt(contactId));
+    const newContactsArray = contactsArray.filter(contact => contact.id !== contactId);
     fs.writeFile(contactsPath, JSON.stringify(newContactsArray), (error) => {
       if (error) throw error;
       console.log(`Contact with id: ${contactId} successfully deleted.`);  
