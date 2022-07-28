@@ -8,7 +8,7 @@ const contactsPath = path.join(__dirname, 'db', 'contacts.json');
 // TODO: задокументувати кожну функцію
 // функція зчитує файл масиву контактів і виводить його в консоль
 function listContacts() {
-  fs.readFile(contactsPath, (error, data) => {
+  fs.readFile(contactsPath, 'utf8', (error, data) => {
     if (error) throw error;
     console.table(JSON.parse(data));
   });
@@ -16,7 +16,7 @@ function listContacts() {
 
 // функція виводить в консоль контакт за ідентифікатором
 function getContactById(contactId) {
-  fs.readFile(contactsPath, (error, data) => {
+  fs.readFile(contactsPath, 'utf8', (error, data) => {
     if (error) throw error;
     const contactsArray = (JSON.parse(data));
     const foundContactIndex = contactsArray.findIndex(contact => parseInt(contact.id) === parseInt(contactId));
@@ -27,7 +27,7 @@ function getContactById(contactId) {
 
 // функція видаляє з масиву контакт за ідентифікатором
 function removeContact(contactId) {
-  fs.readFile(contactsPath, (error, data) => {
+  fs.readFile(contactsPath, 'utf8', (error, data) => {
     if (error) throw error;
     const contactsArray = (JSON.parse(data));
     const foundContactIndex = contactsArray.findIndex(contact => parseInt(contact.id) === parseInt(contactId));
@@ -45,7 +45,7 @@ function removeContact(contactId) {
 
 // функція додає до масиву контакт
 function addContact(name, email, phone) {
-  fs.readFile(contactsPath, (error, data) => {
+  fs.readFile(contactsPath, 'utf8', (error, data) => {
     if (error) throw error;
       const contactsArray = (JSON.parse(data));
       const isNamePresentIndex = contactsArray.findIndex(contact => contact.name === name);
@@ -68,7 +68,7 @@ function addContact(name, email, phone) {
   )
 }
 
-module.exports = { listContacts, getContactById, removeContact, addContact, contactsPath };
+module.exports = { listContacts, getContactById, removeContact, addContact };
 
 // function checkUniqueId(id) {
 //   fs.readFile(contactsPath, (error, data) => {
