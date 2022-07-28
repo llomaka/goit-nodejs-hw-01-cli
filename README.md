@@ -10,3 +10,4 @@ monosnap:</p>
   <li>Додаємо контакт. [Результат](https://monosnap.com/file/fiYPbaqpOQKwWtTsQbuiES3nZnan98)</li>
   <li>Видаляємо контакт. [Результат](https://monosnap.com/file/qunqawqBHCyGJdgasUJAtMxeuobksw)</li>
 </ul>
+[Результат](https://monosnap.com/file/qunqawqBHCyGJdgasUJAtMxeuobksw)
