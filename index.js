@@ -27,4 +27,6 @@ function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-invokeAction(argsObject);
+(async () => {
+  await invokeAction(argsObject);
+})();
