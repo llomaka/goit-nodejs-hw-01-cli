@@ -60,7 +60,7 @@ function addContact(name, email, phone) {
         email,
         phone
       });
-      fs.writeFile(contactsPath, JSON.stringify(contactsArray), (error) => {
+      fs.writeFile(contactsPath, JSON.stringify(contactsArray, null, 2), (error) => {
         if (error) throw error;
         console.log(`Contact ${name} successfully added.`);
       })
